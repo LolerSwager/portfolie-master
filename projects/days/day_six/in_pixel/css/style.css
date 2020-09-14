@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.covor-img{
+    position: relative;
+      top: 0;
+      left: 0;
+}
+
+.covor-text{
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 650px;
+}
+
+.relative{
+    position: relative;
+    top: -230px;
+    left: 89.25px;
+}
+
+.absolute{
+    position: absolute;
+    top: 280px;
+    left: 459.5px;
+}
+
+.fixed{
+    position: fixed;
+    top: 280px;
+    left: 829.75px;
+}

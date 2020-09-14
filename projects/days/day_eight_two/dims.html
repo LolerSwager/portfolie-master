@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="dk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dems</title>
+    <style>
+        /*
+        Ved at lave -- starter du en verdi
+         efter det skal du give den et unikt navn som fx. --farve efterfølgt af en  
+        */
+        :root{
+            --farve: #ffc650;
+            --bredde: 100px;
+            --højde: 150px; 
+        }
+
+        /* var( --navn ) */
+        .dims{
+            background-color: var(--farve);
+            width: var(--bredde);
+            height: var(--højde);
+        }
+    </style>
+</head>
+<body>
+    <div class="dims">
+        jeg er en dimsedut
+    </div>
+</body>
+</html>

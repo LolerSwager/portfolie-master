@@ -1,0 +1,502 @@
+:root{
+    --bgnav: #303030;
+    --tcnav: #f3f3f3;
+    --un-c: #2e87c8;
+
+    --page-width: 90%;
+}
+
+@font-face{
+    font-family: open-sans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 56px;
+    background-color: var(--bgnav);
+}
+
+nav img{
+    height: 50px;
+    margin: 3px;
+}
+
+nav li{
+    display: inline;
+    padding: 0 20px;
+}
+
+nav li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 1.4em;
+    color: var(--tcnav);
+    transition: all .3s ease-out;
+}
+
+nav li a:hover{
+    color: var(--un-c);
+}
+
+main{
+    width: var(--page-width);
+    margin: 20px auto;
+}
+
+.goals{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "goals-video goals-open";
+    grid-gap: 40px;
+}
+
+.goals-video{
+    position: absolute;
+    grid-area: goals-video;
+    bottom: 0;
+    left: 0;
+}
+
+/*  open goals on index page */
+
+.goals-open{
+    grid-area: goals-open;
+    position: relative;
+    display: inline-block;
+}
+
+.goals-open img{
+    width: 100%;
+}
+
+.goals-open .img-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.goals-open:hover .img-top {
+    display: inline;
+}
+
+/* V - GOALS under - V */
+
+.goal-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+}
+
+.goal-frame img{
+    width: 100%;
+}
+
+/* goal-back*/
+.back-goal button{
+    padding: 5px 10px;
+    margin: 15px 5px;
+    font-family: Arial;
+}
+
+/* goal-button */
+
+.goal-button-wrapper{
+    display: inline-flex;
+    width: 100%;
+}
+
+.goal-button button{
+    padding: 5px 10px;
+    margin: 15px 5px;
+    font-family: Arial;
+}
+
+/* goal's */
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+
+.frame{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+
+.frame h4{
+    padding: 5px 0 0 0 ;
+    font-family: open-sans;
+    font-size: 1.1em;
+}
+
+.frame p{
+    padding: 5px 0 0 0 ;
+    font-family: open-sans;
+}
+
+.frame img{
+    width: 100%;
+}
+
+/*  */
+
+section{
+    background-color: var(--theme-color);
+}
+
+.faf-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 35px;
+    grid-template-areas: 
+    "faf-goal-heading faf-goal-heading faf-goal-heading"
+    "faf-card-heading faf-card-heading faf-card-heading"
+    "faf-card-1 faf-card-2 faf-card-3"
+    "faf-card-4 faf-card-5 faf-card-6";
+    margin: 20px auto;
+    padding: 15px;
+    color: #ffffff;
+    width: var(--page-width);
+}
+
+.faf-grid h2{
+    font-family: open-sans;
+    font-size: 3em;
+    text-align: center;
+}
+
+.faf-grid h3{
+    font-family: open-sans;
+    font-size: 2em;
+}
+
+.faf-grid p{
+    font-family: open-sans;
+    margin: 0 15px 15px 15px;
+    font-size: 1.1em;
+}
+
+/* grid area */
+
+.faf-goal-heading{
+    grid-area: faf-goal-heading;
+    text-align: left;
+}
+
+.faf-card-heading{
+    grid-area: faf-card-heading;
+}
+
+.faf-card-1{
+    grid-area: faf-card-1;
+    text-align: center;
+}
+
+.faf-card-2{
+    grid-area: faf-card-2;
+    text-align: center;
+}
+
+.faf-card-3{
+    grid-area: faf-card-3;
+    text-align: center;
+}
+
+.faf-card-4{
+    grid-area: faf-card-4;
+    text-align: center;
+}
+
+.faf-card-5{
+    grid-area: faf-card-5;
+    text-align: center;
+}
+
+.faf-card-6{
+    grid-area: faf-card-6;
+    text-align: center;
+}
+
+/* footer */
+
+footer{
+    border-top: 1px solid black;
+    padding: 20px;
+    display: grid;grid-template-columns: 245px 1fr auto 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "media-grid navigation links partners mail";
+    grid-gap: 50px;
+}
+
+footer h3{
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 1.3em;
+}
+
+footer p a{
+    text-decoration: none;
+    font-family: Arial;
+    color: black;
+    font-size: 1.2em;
+}
+
+footer p a:hover{
+    color: var(--un-c);
+}
+
+footer p{
+    margin: 5px;
+}
+
+.media-grid{
+    grid-area: media-grid;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: auto 50px;
+    grid-gap: 15px;
+    grid-template-areas: 
+        "media-logo media-logo media-logo media-logo"
+        "media-fb media-tw media-ig media-yt";
+        margin: 0 auto;
+}
+
+.media-grid img{
+    width: 100%;
+    height: 100%;
+}
+
+.media-logo{
+    grid-area: media-logo;
+}
+
+.media-fb{
+    grid-area: media-fb;
+}
+
+.media-tw{
+    grid-area: media-tw;
+}
+
+.media-ig{
+    grid-area: media-ig;
+}
+
+.media-yt{
+    grid-area: media-yt;
+}
+
+.navigation{
+    grid-area: navigation;
+}
+
+.links{
+    grid-area: links;
+}
+
+.partners{
+    grid-area: partners;
+}
+
+.mail{
+    grid-area: mail;
+}
+
+.mail-border{
+    border: 2px solid;
+    display: inline-flex;
+}
+
+.mail-border input{
+    border: none;
+    padding: 2px 10px;
+    font-size: 1.3em;
+    width: 200px;
+    margin: 0 -5px 0 0;
+}
+
+.mail-border button{
+    border: none;
+    padding: 2px 10px;
+    font-size: 1.3em;
+    width: 80px;
+    background: linear-gradient(to right, #2e87c8 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    border-left: 1px solid  black;
+    cursor: pointer;
+}
+
+.mail-border button:hover{
+    background-position: left bottom;
+    border-left: 1px solid  var(--un-c);
+}
+
+@media only screen and (max-width: 1300px) {
+    main{
+        width: var(--page-width);
+        margin: 20px auto;
+    }
+ 
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+    }
+
+    footer{
+        border-top: 1px solid black;
+        padding: 20px;
+        display: grid;grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "media-grid navigation links "
+            "partners mail mail";
+        grid-gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    main{
+        width: var(--page-width);
+        margin: 20px auto;
+    }
+
+    .faf-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 25px;
+        grid-template-areas: 
+        "faf-goal-heading faf-goal-heading"
+        "faf-card-heading faf-card-heading"
+        "faf-card-1 faf-card-2"
+        "faf-card-3 faf-card-4"
+        "faf-card-5 faf-card-6";
+        margin: 20px auto;
+        padding: 0;
+        color: #ffffff;
+        width: var(--page-width);
+    }
+
+    .goal-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+    }
+
+    footer{
+        border-top: 1px solid black;
+        padding: 20px;
+        display: grid;grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "media-grid navigation"
+            "links partners"
+            "mail mail";
+        grid-gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root{
+        --page-width: 100%; 
+    }
+
+    nav{
+        display: block;
+        height: 100%;
+        padding: 0 15px;
+    }
+
+    nav li{
+        display: block;
+        background-color: var(--bgnav);
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    main{
+        width: var(--page-width);
+        margin: 20px auto;
+    }
+
+    .frame{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
+
+    .frame p{
+        padding: 5px 0 0 10px ;
+    }
+
+    .frame h4{
+        padding: 5px 0 0 10px ;
+    }
+
+    .faf-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 25px;
+        grid-template-areas: 
+        "faf-goal-heading"
+        "faf-card-heading"
+        "faf-card-1"
+        "faf-card-2"
+        "faf-card-3"
+        "faf-card-4"
+        "faf-card-5"
+        "faf-card-6";
+        margin: 20px auto;
+        padding: 0;
+        color: #ffffff;
+        width: var(--page-width);
+    }
+
+    .goal-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
+
+    footer{
+        border-top: 1px solid black;
+        padding: 20px;
+        display: grid;grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "media-grid"
+            "navigation"
+            "links"
+            "partners"
+            "mail";
+        grid-gap: 15px;
+    }
+
+    footer h3{
+        font-size: 2em;
+    }
+    
+    footer p a{
+        font-size: 1.8em;
+    }
+}

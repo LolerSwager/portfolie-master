@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="upload images to json api">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Info</title>
+</head>
+<header>
+    <nav>
+        <a href="index.html">Image api</a>
+        <ul>
+            <li><a id="openupload">Upload</a></li>
+            <li><a href="info.html">Info</a></li>
+            <li><a id="openlogin">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="grey-box"></div>
+    <div class="box uploadBox">
+        <div class="box-top">
+            <p>Upload form</p>
+            <span onclick="closeForm()"><i class="fas fa-times"></i></span>
+        </div>
+        <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform" multiple>
+            <div id="preview">
+                <img src="img/arrow.png" alt="arrow">
+            </div>
+            <input type="file" name="file" id="file" onchange="loadFile(event)">
+            <label class="choose-btn" for="file"> Choose a file</label>
+            <button class="upload-btn" type="uploadImg" name="uploadImg">Upload</button>
+        </form>
+    </div>
+    <div class="box loginBox">
+        <div class="box-top">
+            <p>Login form</p>
+            <span onclick="closeForm()"><i class="fas fa-times"></i></span>
+        </div>
+        <form action="" method="POST" id="loginform">
+            <div class="username">
+                <label for="Username">Username</label>
+                <input type="text" name="Username">
+            </div>
+            <div class="password">
+                <label for="Password">Password</label>
+                <input type="password" name="Password">
+            </div>
+            <button class="login-btn" type="button" name="login">Login</button>
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" id="">
+                <label for="checkbox">Keep me logged in</label>
+            </div>
+            <a class="f-password" href="">Forgot password?</a>
+            <br>
+            <a class="register" type="button" name="signup" id="signup-btn">Register</a>
+        </form>
+    </div>
+    <div class="box registerBox">
+        <div class="box-top">
+            <p>Register form</p>
+            <span onclick="closeForm()"><i class="fas fa-times"></i></span>
+        </div>
+        <form action="" method="POST" id="Registerform">
+            <div class="username">
+                <label for="Username">Username</label>
+                <input type="text" name="Username">
+            </div>
+            <div class="email">
+                <label for="email">E-mail</label>
+                <input type="email" name="email">
+            </div>
+            <div class="password">
+                <label for="Password">Password</label>
+                <input type="password" name="Password">
+            </div>
+            <button class="register-btn" type="button" name="register">Register</button>
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" id="">
+                <label for="checkbox">I have read and agree to the <a href="termsofservice.md">Terms of Service</a></label>
+            </div>
+            <br>
+            <a class="login" type="button" id="backToLogin">Login</a>
+        </form>
+    </div>
+
+    <main>
+        <div class="info">
+            <section>
+                <article>
+                    <h1>Q&A what is img api?</h1>
+                    <ul>
+                        <li>
+                            <p>what can i use it for?</p>
+                        </li>
+                        <li>
+                            <p> what can i do?</p>
+                        </li>
+                        <li>
+                            <p>what does it support</p>
+                        </li>
+                        <li>
+                            <p>where can i see the json</p>
+                            <a href="JSON/output.json">view json</a><br>
+                        </li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>links:</h3>
+                    <a href="JSON/output.json">view json</a><br>
+                    <a href="output.html">Gallery</a><br>
+                    <a href="README.md">ReadMe</a>
+                    <a href="">Github</a>
+                </article>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="js/openlogin.js"></script>
+
+    <script src="js/preview.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "aside main" "aside footer";
+  -ms-grid-columns: 70px auto;
+      grid-template-columns: 70px auto;
+}
+
+aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  /** fold **/
+}
+
+aside nav {
+  background-color: #0b0c0e;
+  width: 4,375rem;
+  height: 100vh;
+  -webkit-transition: width 200ms ease;
+  transition: width 200ms ease;
+  position: fixed;
+}
+
+aside nav .nav-header {
+  width: 100%;
+}
+
+aside nav .nav-header .logo {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  background-color: #4cbebe;
+}
+
+aside nav .nav-header .logo label img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: -4px;
+}
+
+aside nav .nav-header .logo #btn-fold {
+  display: none;
+}
+
+aside nav .nav-header .logo-extension {
+  display: none;
+}
+
+aside nav .nav-header .logo-extension img {
+  width: 70px;
+  margin: 0 52px 0 52px;
+}
+
+aside nav li {
+  line-height: 40px;
+  width: 100%;
+  border-top: 1px solid #17181c;
+  list-style: none;
+}
+
+aside nav li .slimbar-i, aside nav li .slimbar-p {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+}
+
+aside nav li span {
+  display: none;
+  width: 150px;
+}
+
+aside nav li a,
+aside nav li label {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #4cbebe), color-stop(50%, #0b0c0e));
+  background: linear-gradient(to right, #4cbebe 50%, #0b0c0e 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+aside nav li a:hover,
+aside nav li label:hover {
+  background-position: left bottom;
+}
+
+aside nav li .fa-caret-down {
+  text-align: center;
+  display: none;
+}
+
+aside nav li .first, aside nav li a {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+aside nav li [id^=btn] {
+  display: none;
+}
+
+aside nav li [id^=btn]:checked + ul {
+  display: block;
+}
+
+aside nav ul li ul {
+  display: none;
+}
+
+aside nav ul li ul a {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #4cbebe), color-stop(50%, #17181c));
+  background: linear-gradient(to right, #4cbebe 50%, #17181c 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+aside nav .nav-bottom {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  line-height: 40px;
+  background-color: #17181c;
+  color: #fff;
+}
+
+aside nav .nav-bottom a {
+  color: #fff;
+}
+
+aside nav .nav-bottom a:hover {
+  color: #4cbebe;
+}
+
+aside nav .nav-bottom p {
+  display: inline-block;
+}
+
+aside nav .nav-bottom span {
+  display: none;
+}
+
+aside .nav-big {
+  width: 15.625rem;
+  display: inline-block;
+}
+
+aside .nav-big span {
+  display: inline-block;
+}
+
+aside .nav-big .slimbar-p {
+  opacity: 0;
+}
+
+aside .nav-big .fa-caret-down {
+  display: inline-block;
+}
+
+aside .nav-big .nav-header .logo-extension {
+  display: inline-block;
+}
+
+aside .nav-big .nav-bottom p {
+  display: none;
+}
+
+aside .nav-big .nav-bottom span {
+  display: inline-block;
+}
+
+main {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: main;
+  margin: 1em;
+  font-family: Arial;
+}
+
+main #post-server {
+  margin: 15px;
+}
+
+main #post-server li {
+  margin: 10px 0;
+  background-color: #0b0c0e;
+  list-style: none;
+}
+
+main #post-server li a {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45px 1.5fr 2fr 3fr 115px;
+      grid-template-columns: 45px 1.5fr 2fr 3fr 115px;
+}
+
+main #post-server li a p {
+  padding: 10px;
+}
+
+main #post-server li a img {
+  height: 100%;
+}
+
+main #post-server li:hover {
+  background-color: #4cbebe;
+}
+
+main .projects {
+  margin: 15px;
+}
+
+main .projects .projects-wrapper {
+  display: -ms-grid;
+  display: grid;
+  font-family: Arial;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (minmax(20px, 1fr))[auto-fill];
+      grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));
+  grid-gap: 10px;
+}
+
+main .projects .projects-wrapper .projects-frame {
+  background-color: #17181c;
+  color: #fff;
+}
+
+main .projects .projects-wrapper .projects-frame h2 {
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 10px 5px 10px;
+}
+
+main .projects .projects-wrapper .projects-frame a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main .projects .projects-wrapper .projects-frame a p {
+  padding: 5px 10px;
+}
+
+main .projects .projects-wrapper .projects-frame:hover {
+  background-color: #0b0c0e;
+}
+
+main .about {
+  margin: 15px;
+}
+
+main .about .about-profile {
+  font-family: Arial;
+  font-size: 1.4em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+      grid-template-areas: "profile-img profile-name" "profile-img profile-mail" "profile-img profile-num" "profile-img dems" "profile-img .";
+}
+
+main .about .about-profile img {
+  width: 250px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 1;
+  grid-area: profile-img;
+}
+
+main .contact {
+  margin: 15px;
+}
+
+main .servers {
+  margin: 15px;
+}
+
+main .themes {
+  margin: 15px;
+}
+
+main .themes article {
+  /*background-color: $lightgray;*/
+  width: 450px;
+  margin: auto;
+}
+
+main .themes article h3 {
+  margin: 1em 0 0 0;
+}
+
+main .themes article .wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  background-color: #0b0c0e;
+  padding: 5px;
+  width: 100%;
+}
+
+main .themes article .wrap button {
+  border: none;
+  padding: 5px;
+  background-color: #0b0c0e;
+  color: #fff;
+}
+
+main .themes article .wrap button:focus {
+  outline: none !important;
+}
+
+main .themes article .wrap button:hover {
+  background-color: #0b0c0e;
+}
+
+.activbBtn {
+  background-color: #4cbebe !important;
+}
+
+footer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: footer;
+}
+/*# sourceMappingURL=style.css.map */

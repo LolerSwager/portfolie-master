@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$main-color: #4cbebe;
+$darkgray: #0b0c0e;
+$mediumgray: #17181c;
+$lightgray: #484848;
+$white: #fff;
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "aside main"
+    "aside footer";
+    grid-template-columns: 70px auto;
+}
+
+aside{ // af jannick nielsen :P
+    grid-area: aside;
+    nav{
+        background-color: $darkgray;
+        width: 4,375rem; //det samme som 70px
+        height: 100vh;
+        transition: width 200ms ease;
+        position: fixed;
+        .nav-header{
+            width: 100%;
+            .logo{
+                display: inline-block;
+                height: 70px;
+                width: 70px;
+                background-color: $main-color;
+                label{
+                    img{
+                        width: 70px;
+                        height: 70px;
+                        margin-bottom: -4px;
+                    }
+                }
+                #btn-fold{
+                    display: none;
+                }
+            }
+            .logo-extension{
+                display: none;
+                img{
+                    width: 70px;
+                    margin: 0 52px 0 52px;
+                }
+            }
+        }
+        li{
+            line-height: 40px;
+            width: 100%;
+            border-top: 1px solid $mediumgray;
+            list-style: none;
+            .slimbar-i, .slimbar-p{
+                display: inline-block;
+                width: 70px;
+                text-align: center;
+            }
+            span{
+                display: none;
+                width: 150px;
+            }
+            a,
+            label{
+            background: linear-gradient(to right, $main-color 50%, $darkgray 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all .3s ease-out;
+            }
+            a:hover,
+            label:hover{
+                background-position: left bottom;
+            }
+            .fa-caret-down{
+                text-align: center;
+                display: none;
+            }
+            .first, a{
+                color: $white;
+                cursor: pointer;
+                display: block;
+                padding: 10px 0;
+                text-decoration: none;
+                font-size: 1.3rem;
+            }
+            [id^=btn]{
+                display: none;
+            }
+          
+            [id^=btn]:checked + ul{
+                display: block;
+            }
+        }
+        ul li ul{
+            display: none;
+            a{
+                background: linear-gradient(to right, $main-color 50%, $mediumgray 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+            }
+        }
+        .nav-bottom{
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+            line-height: 40px;
+            background-color: $mediumgray;
+            color: $white;
+            a{
+                color: $white;
+            }
+            a:hover{
+                color: $main-color;
+            }
+            p{
+                display: inline-block;
+            }
+            span{
+                display: none;
+            }
+        }
+    }
+    /** fold **/
+    .nav-big{ // .js class
+        width: 15.625rem; // det samme som 250px
+        display: inline-block;
+        span{
+            display: inline-block;
+        }
+        .slimbar-p{
+            opacity: 0;
+        }
+        .fa-caret-down{
+            display: inline-block;
+        }
+        .nav-header{
+            .logo-extension{
+                display: inline-block;
+            }
+        }
+        .nav-bottom{
+            p{
+                display: none;
+            }
+            span{
+                display: inline-block;
+            }
+        }
+    }
+}
+main{
+    grid-area: main;
+    margin: 1em;
+    font-family: Arial;
+    #post-server{//test.php start
+        margin: 15px;
+        li{
+            margin: 10px 0;
+            background-color: $darkgray;
+            list-style: none;
+            a{
+                color: $white;
+                cursor: pointer;
+                display: block;
+                text-decoration: none;
+                display: grid;
+                grid-template-columns: 45px 1.5fr 2fr 3fr 115px;
+                p{
+                    padding: 10px;
+                }
+                img{
+                    height: 100%;
+                }
+            }
+        }
+        li:hover{
+            background-color: $main-color;
+        }
+    }//test.php end
+    .projects{
+        margin: 15px;
+        .projects-wrapper{
+            display: grid;
+            font-family: Arial;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));
+            grid-gap: 10px;
+            .projects-frame{
+                background-color: $mediumgray;
+                color: $white;
+                h2{
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 10px 10px 5px 10px;
+                }
+                a{
+                    text-decoration: none;  
+                    color: $white;
+                    p{
+                        padding: 5px 10px;
+                    }
+                }
+                &:hover{
+                    background-color: $darkgray;
+                }
+            }
+        }
+    }
+    .about{
+        margin: 15px;
+        .about-profile{
+            font-family: Arial;
+            font-size: 1.4em;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 10px;
+            grid-template-areas: 
+            "profile-img profile-name"
+            "profile-img profile-mail"
+            "profile-img profile-num"
+            "profile-img dems"
+            "profile-img .";
+            img{
+                width: 250px;
+                grid-area: profile-img;
+            }
+        }
+    }
+    .contact{
+        margin: 15px;
+    }
+    .servers{
+        margin: 15px;
+    }
+    .themes{
+        margin: 15px;
+        article{
+            /*background-color: $lightgray;*/
+            width: 450px;
+            margin: auto;
+            h3{
+                margin: 1em 0 0 0;
+            }
+            .wrap{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+                background-color: $darkgray;
+                padding: 5px;
+                width: 100%;
+                button{
+                    border: none;
+                    padding: 5px;
+                    background-color: $darkgray;
+                    color: $white;
+                    &:focus{
+                        outline:none !important;
+                    }
+                }
+                button:hover{
+                    background-color: $darkgray;
+                }
+            }
+        }
+    }
+}
+.activbBtn{
+    background-color: $main-color !important;
+}
+footer{
+    grid-area: footer;
+}
